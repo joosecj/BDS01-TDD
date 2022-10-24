@@ -21,7 +21,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @AutoConfigureMockMvc
 @Transactional
 public class EmployeeControllerIT {
-
 	@Autowired
 	private MockMvc mockMvc;
 	
@@ -30,7 +29,6 @@ public class EmployeeControllerIT {
 	
 	@Test
 	public void findAllShouldReturnPagedResourcesSortedByName() throws Exception {
-		
 		ResultActions result =
 				mockMvc.perform(get("/employees")
 					.contentType(MediaType.APPLICATION_JSON));
@@ -44,7 +42,6 @@ public class EmployeeControllerIT {
 	
 	@Test
 	public void insertShouldInsertResource() throws Exception {
-
 		EmployeeDTO dto = new EmployeeDTO(null, "Joaquim", "joaquim@gmail.com", 1L);
 		String jsonBody = objectMapper.writeValueAsString(dto);
 		
